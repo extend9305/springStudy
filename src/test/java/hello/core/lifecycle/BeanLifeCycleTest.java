@@ -19,7 +19,8 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig{
         //@Bean(initMethod = "init",destroyMethod = "close") // destroyMethod 추론 기능이 있어 close destory 이름의 method를 찾아 실행.
-        @Bean(initMethod = "init",destroyMethod = "")   //추론기능을 사용하고 싶지 않으면 이렇게 막으면된다.
+        //@Bean(initMethod = "init",destroyMethod "")   //추론기능을 사용하고 싶지 않으면 이렇게 막으면된다.
+        @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
